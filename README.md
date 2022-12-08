@@ -79,17 +79,15 @@ VALUES (3, 'João Pedro', '1979', 'joao@provasql.com.br', 'M')
   <h4>Faça um comando SQL para matricular o aluno “Pedro César” no curso de
 Informática. Os dados devem ser inseridos na tabela TB_MATRÍCULA.</h4>
 
+<div align="center">
+  <img src="Q1_sql">
+</div>
+
 ```
 insert into tb_aluno(cod_aluno,nome_aluno,ano_nasc,email,sexo)
 values(4, 'Pedro César', NULL, null,'M');
 insert into tb_matricula(cod_curso, cod_aluno)
 values(4, 4)
-SELECT * FROM tb_matricula
-
-<div align="center">
-  <img src="1questao">
-</div>
-
     
 ```
 
