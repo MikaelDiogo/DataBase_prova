@@ -226,13 +226,27 @@ where sexo = 'F'
 
 SQL é uma linguagem padrão para trabalhar com bancos de dados relacionais. Ela é uma linguagem declarativa e que não necessita de profundos conhecimentos de programação para que alguém possa começar a escrever queries, as consultas e pedidps, que trazem resultados de acordo com o que você está buscando.
 
-<h3>02 Faça um relacionamento cronológico sobre SQL.</h3>
+<h3>02 Faça um relacionamento cronológico sobre SQL</h3>
 	
  O SQL foi originalmente desenvolvido  no início dos anos 1970 no IBM Labs. O nome original da linguagem era SEQUEL, 
 , que significa "Structured English Query Language". No início dos anos 1980, o American National Standards Institute (ANSI) começou  a trabalhar no desenvolvimento de uma versão padrão do SQL que foi publicada em 1986 e 1
 . Desde então, o SQL passou por 
 .
  melhorias importantes e outras alterações e adições até os dias atuais. . até agora, tornou-se a linguagem  padrão para bancos de dados.
+	
+<h3>03 Liste as principais caracteríticas de SQL</h3>
+Trata-se de uma linguagem com palavras-chave em inglês, e formato livre (com relação à identificação, quebra de linhas, etc.) e livremente baseada na Teoria dos Conjuntos, isto é, as tabelas onde constam as informações são tratadas como conjuntos, onde são aplicadas operações de intercessão, união, seleção, etc.
+Suas principais funções:
+
+Analíticas: Computam um valor agregado com base em um grupo de linhas. Podemos usar funções analíticas para calcular médias móveis, totais acumulados, percentuais ou os primeiros N resultados de um grupo.
+
+Manipulação de bits: permitem processar e armazenar dados com mais eficiência do que com bits individuais.
+
+Classificação: Retornam um valor de classificação para cada linha em uma partição. Dependendo da função usada, algumas linhas podem receber o mesmo valor que outras.
+
+Conjunto de linhas: Retornam um objeto que pode ser usado como referências de tabela em uma instrução SQL.
+
+Escalares: Funcionam em um valor único e retornam um valor único. As funções escalares podem ser usadas onde uma expressão é válida.
 
 	
 	
