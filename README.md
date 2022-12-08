@@ -80,7 +80,7 @@ VALUES (3, 'João Pedro', '1979', 'joao@provasql.com.br', 'M')
 Informática. Os dados devem ser inseridos na tabela TB_MATRÍCULA.</h4>
 
 <div align="center">
-  <img src="Q1_sql">
+  <img src="Q1_sql.png">
 </div>
 
 ```
@@ -90,43 +90,52 @@ insert into tb_matricula(cod_curso, cod_aluno)
 values(4, 4)
     
 ```
-
-  
-  
   <h2> Question 2 </h2>
+  
 <h4>Escreva um comando SQL que retorne os nomes dos alunos e do(s) cursos em
 que estão matriculados. Os dados deverão estar ordenados pelo nome do curso.</h4>
 
-```
+<div align="center">
+  <img src="Q2_sql.png">
+</div>
+
+```0
 select tb_aluno.nome_aluno, tb_curso.nome_curso from tb_aluno 
 inner join tb_matricula on tb_aluno.codigo_aluno = tb_matricula.codigo_aluno
 inner join tb_curso on tb_curso.codigo_curso = tb_matricula.codigo_curso
 ```
 
-<img src='questao2.png'>
-
-
 <h2> Question 3 </h2>
+
 <h4>Crie um comando SQL que retorne o e-mail de todos os alunos maiores de idade.</h4>
+
+<div align="center">
+  <img src="Q3_sql.png">
+</div>
 
 ```
 select email from tb_aluno where 2022 - ano_nascimento >= 18
 ```
 
-<img src='questao3.png'>
-
 <h2> Question 4 </h2>
+
 <h4>Desenvolva um comando SQL que mostre o total de alunos.</h4>
+
+<div align="center">
+  <img src="Q4_sql.png">
+</div>
 
 ```
 select count(cod_aluno) as totalalunos from tb_aluno
 ```
 
-<img src='questao4.png'>
-
-
 <h2> Question 5 </h2>
+
 <h4>Desenvolva um comando SQL que mostre o total de alunos.</h4>
+
+<div align="center">
+  <img src="Q5_sql.png">
+</div>
 
 ```
 alter table tb_matricula
@@ -137,18 +146,14 @@ add column codigo_matricula int primary key on update cascade
 select count(codigo_matricula) from tb_matricula
 ```
 
-<img src='questao5.png'>
-
 <h2> Question 6 </h2>
 <h4>Desenvolva um comando SQL que retorne o nome de todos os alunos maiores que
 18 anos.</h4>
 
+<div align="center">
+  <img src="Q6_sql.png">
+</div>
+
 ```
 select nome_aluno from tb_aluno where 2022 - ano_nascimento >= 18
 ```
-
-<img src='questao6.png'>
-
-  
-  
-
