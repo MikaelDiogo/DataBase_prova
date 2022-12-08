@@ -9,40 +9,39 @@ Neste repositório será mostrado passo a passo a criação do banco de dados, d
 <h2>Criação do banco</h2>
 
 ```
-CREATE DATABASE bdescola
+CREATE DATABASE DataBaseSchool
 ```
 <h2>Criação das tabelas</h2>
 Criando a tabela 'tb_aluno'
 
 
 ```
-CREATE TABLE tb_aluno( 
-codigo_aluno INTEGER PRIMARY KEY, 
-nome_aluno VARCHAR(60) NOT NULL, 
-ano_nascimento INT, 
-email VARCHAR(60), 
-sexo VARCHAR NOT NULL
-)  
+
+create table tb_aluno (
+	cod_aluno int primary key,
+	nome_aluno varchar(60) not null,
+	ano_nasc int,
+	email varchar(60),
+	sexo varchar(1) not null
+)
 ```
 
 
 Criando a tabela 'tb_curso'
 ```
-CREATE TABLE tb_curso( 
-codigo_curso INTEGER PRIMARY KEY, 
-nome_curso VARCHAR(60) NOT NULL 
-) 
+create table tb_curso(
+	cod_curso int primary key,
+	nome_curso varchar(60) not null
+)
 ```
 Criando a tabela 'tb_matricula'
 ```
-CREATE TABLE tb_matricula( 
-codigo_curso INTEGER REFERENCES tb_curso (codigo_curso), 
-codigo_aluno INTEGER REFERENCES tb_aluno (codigo_aluno) 
-) 
+create table tb_matricula(
+	cod_curso int references tb_curso(cod_curso),
+	cod_aluno int references tb_aluno(cod_aluno)
+)
 
-alter table  
-add constraint fk_codigo_curso foreign  key (codigo_curso) references tb_curso(codigo_curso) 
-add constraint fk_codigo_aluno foreign  key (codigo_aluno) references tb_aluno(codigo_aluno)
+
 
 ```
 
@@ -52,24 +51,33 @@ add constraint fk_codigo_aluno foreign  key (codigo_aluno) references tb_aluno(c
 Inserindo dados na tabela 'tb_curso'
 
 ```
-INSERT INTO tb_curso (codigo_curso, nome_curso) 
-VALUES (1, ‘MEDICINA’) 
+insert into tb_curso(cod_curso, nome_curso)
+values(1, 'Medicina')
+values(2, 'Arquitetura')
+values(3, 'Filosofia')
+values(4, 'Informática')
+values(5, 'Jornalismo')
+ 
 ```
 
 
 Inserindo dados na tabela 'tb_matricula
 
 ```
-INSERT INTO tb_matricula (codigo_curso, codigo_aluno)  
-VALUES (1, 1) 
+create table tb_matricula(
+	cod_curso int references tb_curso(cod_curso),
+	cod_aluno int references tb_aluno(cod_aluno)
+)
 ```
 
 
 Inserindo dados na tabela 'tb_aluno'
 
 ```
-INSERT INTO tb_aluno (codigo_aluno, nome_aluno, ano_nascimento, email, sexo) 
-VALUES (3, 'João Pedro', '1979', 'joao@provasql.com.br', 'M') 
+insert into tb_aluno(cod_aluno,nome_aluno,ano_nasc,email,sexo)
+values(1, 'Josiel Jardim', '1974','josiel@provaSQL.com.br','M');
+values(2, 'Ana Maria', '1980','ana@provaSQL.com.br','F');
+values(3, 'João Pedro', '1979','joao@provaSQL.com.br','M');
 ```
 
   <h2>Resolução das questões</h2>
@@ -85,12 +93,12 @@ Informática. Os dados devem ser inseridos na tabela TB_MATRÍCULA.</h4>
 
 ```
 insert into tb_aluno(cod_aluno,nome_aluno,ano_nasc,email,sexo)
-values(4, 'Pedro César', NULL, null,'M');
+values(4, 'Pedro César', NULL, NULL,'M');
 insert into tb_matricula(cod_curso, cod_aluno)
 values(4, 4)
     
 ```
-  <h2> Question 2 </h2>
+  <h2> Questão 02 </h2>
   
 <h4>Escreva um comando SQL que retorne os nomes dos alunos e do(s) cursos em
 que estão matriculados. Os dados deverão estar ordenados pelo nome do curso.</h4>
@@ -99,13 +107,15 @@ que estão matriculados. Os dados deverão estar ordenados pelo nome do curso.</
   <img src="Q2_sql.png">
 </div>
 
-```0
-select tb_aluno.nome_aluno, tb_curso.nome_curso from tb_aluno 
-inner join tb_matricula on tb_aluno.codigo_aluno = tb_matricula.codigo_aluno
-inner join tb_curso on tb_curso.codigo_curso = tb_matricula.codigo_curso
+```
+  select tb_aluno.nome_aluno, tb_curso.nome_curso FROM tb_aluno
+INNER JOIN tb_matricula
+ON tb_aluno.cod_aluno = tb_matricula.cod_aluno
+INNER JOIN tb_curso
+ON tb_curso.cod_curso = tb_matricula.cod_curso
 ```
 
-<h2> Question 3 </h2>
+<h2> Questão 03 </h2>
 
 <h4>Crie um comando SQL que retorne o e-mail de todos os alunos maiores de idade.</h4>
 
@@ -114,10 +124,10 @@ inner join tb_curso on tb_curso.codigo_curso = tb_matricula.codigo_curso
 </div>
 
 ```
-select email from tb_aluno where 2022 - ano_nascimento >= 18
+select email from tb_aluno where 2022 - ano_nasc >= 18
 ```
 
-<h2> Question 4 </h2>
+<h2> Question 04 </h2>
 
 <h4>Desenvolva um comando SQL que mostre o total de alunos.</h4>
 
@@ -126,10 +136,10 @@ select email from tb_aluno where 2022 - ano_nascimento >= 18
 </div>
 
 ```
-select count(cod_aluno) as totalalunos from tb_aluno
+select count(cod_aluno) from tb_aluno 
 ```
 
-<h2> Question 5 </h2>
+<h2> Questão 05 </h2>
 
 <h4>Desenvolva um comando SQL que mostre o total de alunos.</h4>
 
@@ -138,15 +148,16 @@ select count(cod_aluno) as totalalunos from tb_aluno
 </div>
 
 ```
-alter table tb_matricula
-add column codigo_matricula int primary key on update cascade
+select tb_curso.nome_curso,
+cod_curso + cod_aluno as numero_alunos 
+from tb_curso
+inner join tb_aluno
+on tb_aluno.cod_aluno = tb_curso.cod_curso
 ```
 
-```
-select count(codigo_matricula) from tb_matricula
-```
 
-<h2> Question 6 </h2>
+
+<h2> Questão 06 </h2>
 <h4>Desenvolva um comando SQL que retorne o nome de todos os alunos maiores que
 18 anos.</h4>
 
@@ -155,5 +166,8 @@ select count(codigo_matricula) from tb_matricula
 </div>
 
 ```
-select nome_aluno from tb_aluno where 2022 - ano_nascimento >= 18
+select nome_aluno from tb_aluno where 2022 - ano_nasc >= 18 
 ```
+
+  
+ <h2>
