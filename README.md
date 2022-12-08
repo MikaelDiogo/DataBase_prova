@@ -80,14 +80,19 @@ VALUES (3, 'João Pedro', '1979', 'joao@provasql.com.br', 'M')
 Informática. Os dados devem ser inseridos na tabela TB_MATRÍCULA.</h4>
 
 ```
-INSERT INTO tb_aluno (codigo_aluno, nome_aluno, ano_nascimento, email, sexo)
-VALUES (4, 'Pedro', null, null, 'M')
-INSERT INTO tb_matricula (codigo_curso, codigo_aluno) 
-VALUES (4, 4)
+insert into tb_aluno(cod_aluno,nome_aluno,ano_nasc,email,sexo)
+values(4, 'Pedro César', NULL, null,'M');
+insert into tb_matricula(cod_curso, cod_aluno)
+values(4, 4)
 SELECT * FROM tb_matricula
-  
+
+<div align="center">
+  <img src="1questao">
+</div>
+
+    
 ```
-<IMG>
+
   
   
   <h2> Question 2 </h2>
