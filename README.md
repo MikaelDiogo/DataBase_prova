@@ -257,6 +257,8 @@ WHERE: A cláusula WHERE é a responsável por filtrar resultados, utilizando pa
 ORDER BY: Serve para ordenar os resultados com a cláusula ORDER BY. A cláusula ORDER BY deve ser inserida após as cláusulas anteriores. O modo ascendente (ASC) é o padrão do ORDER BY, indo do menor para o maior. Porém, contém também o modo decrescente (DESC), indo do maior para o menor.
 	
 	
-
+<h3>05 Qual a importância da linguagem SQL no desenvolvimento de softwares atualmente? Justifique</h3>
+O SQL é bem importante no desenvolvimento de softwares, já que as consultas e o gerenciamento de dados se tornam bem mais dinâmicas. Aprendê-la permite entrar em contato com os dados na fonte e é uma linguagem bem simples de se aprender.
+	
 	
 	
