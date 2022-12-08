@@ -87,9 +87,9 @@ values(3, 'João Pedro', '1979','joao@provaSQL.com.br','M');
   <h4>Faça um comando SQL para matricular o aluno “Pedro César” no curso de
 Informática. Os dados devem ser inseridos na tabela TB_MATRÍCULA.</h4>
 
-<div align="center">
+
   <img src="Q1_sql.png">
-</div>
+
 
 ```
 insert into tb_aluno(cod_aluno,nome_aluno,ano_nasc,email,sexo)
@@ -103,9 +103,8 @@ values(4, 4)
 <h4>Escreva um comando SQL que retorne os nomes dos alunos e do(s) cursos em
 que estão matriculados. Os dados deverão estar ordenados pelo nome do curso.</h4>
 
-<div align="center">
+
   <img src="Q2_sql.png">
-</div>
 
 ```
   select tb_aluno.nome_aluno, tb_curso.nome_curso FROM tb_aluno
@@ -119,9 +118,8 @@ ON tb_curso.cod_curso = tb_matricula.cod_curso
 
 <h4>Crie um comando SQL que retorne o e-mail de todos os alunos maiores de idade.</h4>
 
-<div align="center">
   <img src="Q3_sql.png">
-</div>
+
 
 ```
 select email from tb_aluno where 2022 - ano_nasc >= 18
@@ -131,9 +129,9 @@ select email from tb_aluno where 2022 - ano_nasc >= 18
 
 <h4>Desenvolva um comando SQL que mostre o total de alunos.</h4>
 
-<div align="center">
+
   <img src="Q4_sql.png">
-</div>
+
 
 ```
 select count(cod_aluno) from tb_aluno 
@@ -143,9 +141,8 @@ select count(cod_aluno) from tb_aluno
 
 <h4>Desenvolva um comando SQL que mostre o total de alunos.</h4>
 
-<div align="center">
   <img src="Q5_sql.png">
-</div>
+
 
 ```
 select tb_curso.nome_curso,
@@ -161,13 +158,53 @@ on tb_aluno.cod_aluno = tb_curso.cod_curso
 <h4>Desenvolva um comando SQL que retorne o nome de todos os alunos maiores que
 18 anos.</h4>
 
-<div align="center">
   <img src="Q6_sql.png">
-</div>
+
 
 ```
 select nome_aluno from tb_aluno where 2022 - ano_nasc >= 18 
 ```
 
   
- <h2>
+ <h2>Questão 07</h2>
+ <h4>Faça um comando SQL que retorne o nome de todas as mulheres.</h4>
+ <img src="Q7_sql.png">
+ ```
+ select nome_aluno, sexo
+from tb_aluno where sexo = 'F'
+ 
+ ```
+<h2>Questão 08</h4>
+
+<h4>Faça um comando SQL que retorne o nome de todas as mulheres matriculadas no curso de Medicina.</h4>
+
+ <img src="Q8_sql.png">
+ ```
+select tb_aluno.nome_aluno, tb_curso.nome_curso
+from tb_aluno
+inner join tb_curso
+on tb_aluno.cod_aluno = tb_curso.cod_curso
+where nome_curso = 'Medicina' and sexo = 'F'
+ 
+ ```
+ 
+ <h2>Questão 09</h2>
+ <h4>Faça um comando SQL que retorne os nomes dos cursos ordenados por ordem alfabética.</h4>
+ <img src="Q9_sql.png">
+ ```
+select nome_curso
+from tb_curso order by nome_curso ascina' and sexo = 'F'
+ 
+ ```
+ 
+ <h2>Questão 10</h2>
+ <h4>Crie o enunciado de uma consulta SQL que utilize “junção” (como resposta) </h4>
+ 
+  <img src="Q10_sql.png">
+ ```
+select nome_curso
+from tb_curso order by nome_curso ascina' and sexo = 'F'
+ 
+ ```
+ 
+ 
