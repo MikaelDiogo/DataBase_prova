@@ -217,7 +217,22 @@ from tb_aluno
 inner join tb_curso
 on tb_aluno.codigo_aluno = tb_curso.codigo_curso
 where sexo = 'F'
- 
  ```
+	
  
- 
+<h2>Questões Teóricas</h2>
+<h3>01 Defina SQL:</h3>
+	
+
+SQL é uma linguagem padrão para trabalhar com bancos de dados relacionais. Ela é uma linguagem declarativa e que não necessita de profundos conhecimentos de programação para que alguém possa começar a escrever queries, as consultas e pedidps, que trazem resultados de acordo com o que você está buscando.
+
+<h3>02 Faça um relacionamento cronológico sobre SQL.</h3>
+	
+ O SQL foi originalmente desenvolvido  no início dos anos 1970 no IBM Labs. O nome original da linguagem era SEQUEL, 
+, que significa "Structured English Query Language". No início dos anos 1980, o American National Standards Institute (ANSI) começou  a trabalhar no desenvolvimento de uma versão padrão do SQL que foi publicada em 1986 e 1
+. Desde então, o SQL passou por 
+.
+ melhorias importantes e outras alterações e adições até os dias atuais. . até agora, tornou-se a linguagem  padrão para bancos de dados.
+
+	
+	
