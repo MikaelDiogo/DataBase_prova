@@ -174,11 +174,13 @@ select nome_aluno from tb_aluno where 2022 - ano_nasc >= 18
 from tb_aluno where sexo = 'F'
  
  ```
+ 
 <h2>Questão 08</h4>
 
 <h4>Faça um comando SQL que retorne o nome de todas as mulheres matriculadas no curso de Medicina.</h4>
 
  <img src="Q8_sql.png">
+ 
  ```
 select tb_aluno.nome_aluno, tb_curso.nome_curso
 from tb_aluno
@@ -189,8 +191,11 @@ where nome_curso = 'Medicina' and sexo = 'F'
  ```
  
  <h2>Questão 09</h2>
+ 
  <h4>Faça um comando SQL que retorne os nomes dos cursos ordenados por ordem alfabética.</h4>
+ 
  <img src="Q9_sql.png">
+ 
  ```
 select nome_curso
 from tb_curso order by nome_curso ascina' and sexo = 'F'
@@ -198,12 +203,19 @@ from tb_curso order by nome_curso ascina' and sexo = 'F'
  ```
  
  <h2>Questão 10</h2>
+ 
  <h4>Crie o enunciado de uma consulta SQL que utilize “junção” (como resposta) </h4>
+ Mostre os nomes de todas as alunas do curso de arquitetura e seu respectivo sexo.
+ 
  
   <img src="Q10_sql.png">
+  
  ```
-select nome_curso
-from tb_curso order by nome_curso ascina' and sexo = 'F'
+select tb_aluno.nome_aluno, sexo, tb_curso.nome_curso
+from tb_aluno
+inner join tb_curso
+on tb_aluno.codigo_aluno = tb_curso.codigo_curso
+where sexo = 'F'
  
  ```
  
