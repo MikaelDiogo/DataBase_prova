@@ -209,7 +209,7 @@ from tb_curso order by nome_curso ascina' and sexo = 'F'
  Mostre os nomes de todas as alunas do curso de arquitetura e seu respectivo sexo.
  
  
-  <img src="Q10_sql.png">
+  <img src="Q10_SqL.png">
   
  ```
 select tb_aluno.nome_aluno, sexo, tb_curso.nome_curso
