@@ -168,11 +168,12 @@ select nome_aluno from tb_aluno where 2022 - ano_nasc >= 18
   
  <h2>Questão 07</h2>
  <h4>Faça um comando SQL que retorne o nome de todas as mulheres.</h4>
+	
  <img src="Q7_sql.png">
- ```
- select nome_aluno, sexo
+	
+```
+select nome_aluno, sexo
 from tb_aluno where sexo = 'F'
- 
  ```
  
 <h2>Questão 08</h4>
